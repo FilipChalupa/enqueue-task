@@ -27,6 +27,9 @@
 		"url": "https://www.npmjs.com/~onset"
 	},
 	"license": "ISC",
+	"dependencies": {
+		"custom-listenable": "^0.2.1"
+	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^16.0.0",
 		"@rollup/plugin-node-resolve": "^10.0.0",
