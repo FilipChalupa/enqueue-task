@@ -1,11 +1,11 @@
-# Queue [![npm](https://img.shields.io/npm/v/@onset/queue.svg)](https://www.npmjs.com/package/@onset/queue) ![npm type definitions](https://img.shields.io/npm/types/@onset/queue.svg)
+# Queue [![npm](https://img.shields.io/npm/v/enqueue-task.svg)](https://www.npmjs.com/package/enqueue-task) ![npm type definitions](https://img.shields.io/npm/types/enqueue-task.svg)
 
 Queue for your project.
 
 ## Installation
 
 ```bash
-npm install @onset/queue
+npm install enqueue-task
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install @onset/queue
 ### Queue
 
 ```typescript
-import { queue } from '@onset/queue'
+import { queue } from 'enqueue-task'
 
 const delay = (milliseconds: number) =>
 	new Promise((resolve) => setTimeout(resolve, milliseconds))
@@ -47,14 +47,14 @@ queue.enqueueTask(task3)
 #### Custom queue
 
 ```typescript
-import { createQueue } from '@onset/queue'
+import { createQueue } from 'enqueue-task'
 const myQueue = createQueue()
 ```
 
 ### Group helper
 
 ```typescript
-import { getQueueGroup } from '@onset/queue'
+import { getQueueGroup } from 'enqueue-task'
 
 getQueueGroup('apples').enqueueTask(task1)
 getQueueGroup('apples').enqueueTask(task2)
@@ -72,6 +72,6 @@ getQueueGroup('pears').enqueueTask(task3)
 #### Custom get queue group
 
 ```typescript
-import { createGetQueueGroup } from '@onset/queue'
+import { createGetQueueGroup } from 'enqueue-task'
 const myGetQueueGroup = createGetQueueGroup()
 ```
