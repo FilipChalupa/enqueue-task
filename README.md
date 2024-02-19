@@ -36,7 +36,7 @@ queue.enqueueTask(task2)
 queue.enqueueTask(task3)
 ```
 
-#### Console output:
+#### Console output
 
 ```js
 'Task 1' // After 5 seconds
@@ -44,7 +44,7 @@ queue.enqueueTask(task3)
 'Task 3' // After 12.5 seconds
 ```
 
-### Custom queue
+#### Custom queue
 
 ```typescript
 import { createQueue } from '@onset/queue'
@@ -61,7 +61,7 @@ getQueueGroup('apples').enqueueTask(task2)
 getQueueGroup('pears').enqueueTask(task3)
 ```
 
-#### Console output:
+#### Console output
 
 ```js
 'Task 3' // After 4 seconds
@@ -69,7 +69,7 @@ getQueueGroup('pears').enqueueTask(task3)
 'Task 2' // After 8.5 seconds
 ```
 
-### Custom get queue group
+#### Custom get queue group
 
 ```typescript
 import { createGetQueueGroup } from '@onset/queue'
