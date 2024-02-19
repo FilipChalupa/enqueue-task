@@ -1,6 +1,6 @@
 {
 	"name": "enqueue-task",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"description": "Queue for your project.",
 	"type": "module",
 	"main": "./dist/index.js",
