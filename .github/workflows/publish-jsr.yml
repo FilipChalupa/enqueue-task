@@ -3,6 +3,8 @@ on:
   push:
     tags:
       - '**'
+    branches:
+      - main # @TODO: remove experiment
 
 jobs:
   publish:
@@ -23,8 +25,12 @@ jobs:
         run: |
           sed -i "s/\"version\": \".*\"/\"version\": \"${{ steps.package-version.outputs.version }}\"/" deno.json
 
+      - name: Cat deno.json
+        run: |
+          cat deno.json
+
       - name: Install Deno
         uses: denoland/setup-deno@v1
 
-      - name: Publish package
-        run: deno publish
+      # - name: Publish package
+      #   run: deno publish
