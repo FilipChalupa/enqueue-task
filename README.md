@@ -1,4 +1,4 @@
-# Enqueue task [![npm](https://img.shields.io/npm/v/enqueue-task.svg)](https://www.npmjs.com/package/enqueue-task) ![npm type definitions](https://img.shields.io/npm/types/enqueue-task.svg)
+# Enqueue task [![npm](https://img.shields.io/npm/v/enqueue-task.svg)](https://www.npmjs.com/package/enqueue-task) ![npm type definitions](https://img.shields.io/npm/types/enqueue-task.svg) [![jsr](https://img.shields.io/badge/jsr-F7DF1E)](https://jsr.io/@onset/enqueue-task)
 
 Queue for your project.
 
