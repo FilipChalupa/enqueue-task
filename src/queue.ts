@@ -2,4 +2,4 @@
 // @ts-ignore: Deno requires extension hack
 import { createQueue } from './createQueue.ts'
 
-export const queue = createQueue()
+export const queue: ReturnType<typeof createQueue> = createQueue()

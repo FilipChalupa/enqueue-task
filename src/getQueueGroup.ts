@@ -2,4 +2,5 @@
 // @ts-ignore: Deno requires extension hack
 import { createGetQueueGroup } from './createGetQueueGroup.ts'
 
-export const getQueueGroup = createGetQueueGroup()
+export const getQueueGroup: ReturnType<typeof createGetQueueGroup> =
+	createGetQueueGroup()

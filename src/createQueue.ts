@@ -1,6 +1,8 @@
 export type Task = () => Promise<void>
 
-export const createQueue = () => {
+export const createQueue = (): {
+	enqueueTask: (task: Task) => Promise<void>
+} => {
 	type Item = {
 		task: Task
 		markDone: () => void

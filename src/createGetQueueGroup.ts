@@ -4,7 +4,9 @@ import { createQueue } from './createQueue.ts'
 
 type Group = string | symbol | null | undefined
 
-export const createGetQueueGroup = () => {
+export const createGetQueueGroup = (): ((
+	group: Group,
+) => ReturnType<typeof createQueue>) => {
 	const queues = new Map<Group, ReturnType<typeof createQueue>>()
 
 	return (group: Group) => {
