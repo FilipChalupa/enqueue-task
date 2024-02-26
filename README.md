@@ -51,6 +51,17 @@ import { createQueue } from 'enqueue-task'
 const myQueue = createQueue()
 ```
 
+#### Return value
+
+```typescript
+const task4 = async () => {
+	await delay(1000)
+	return 3.14159265358979
+}
+const result4 = await queue.enqueueTask(task4)
+console.log(result4) // 3.14159265358979
+```
+
 ### Group helper
 
 ```typescript
