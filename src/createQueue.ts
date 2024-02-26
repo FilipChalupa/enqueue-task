@@ -9,7 +9,7 @@ export const createQueue = (): {
 	}
 	// @TODO: add discardPendingTasks function
 	const items: Item[] = []
-	const enqueueTask = async <ReturnValue>(
+	const enqueueTask = <ReturnValue>(
 		task: Task<ReturnValue>,
 	): Promise<ReturnValue> => {
 		let markDone: (returnValue: ReturnValue) => void = () => {
