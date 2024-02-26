@@ -1,8 +1,8 @@
 name: Publish
 on:
   push:
-    branches:
-      - main # @TODO: change to tags
+    tags:
+      - '**'
 
 jobs:
   publish:
