@@ -1,20 +1,21 @@
-export type Task = () => Promise<void>
+export type Task<ReturnValue> = () => Promise<ReturnValue>
 
 export const createQueue = (): {
-	enqueueTask: (task: Task) => Promise<void>
+	enqueueTask: <ReturnValue>(task: Task<ReturnValue>) => Promise<ReturnValue>
 } => {
-	type Item = {
-		task: Task
-		markDone: () => void
+	type Item<ReturnValue = unknown> = {
+		task: Task<ReturnValue>
+		markDone: (returnValue: ReturnValue) => void
 	}
+	// @TODO: add discardPendingTasks function
 	const items: Item[] = []
-	// @TODO: add discardPendingTasks option
-	// @TODO: return return value of task
-	const enqueueTask = async (task: Task) => {
-		let markDone = () => {
+	const enqueueTask = async <ReturnValue>(
+		task: Task<ReturnValue>,
+	): Promise<ReturnValue> => {
+		let markDone: (returnValue: ReturnValue) => void = () => {
 			// Placeholder
 		}
-		const promise = new Promise<void>((resolve) => {
+		const promise = new Promise<ReturnValue>((resolve) => {
 			markDone = resolve
 		})
 		items.push({ task, markDone })
@@ -23,7 +24,7 @@ export const createQueue = (): {
 			runNextItem()
 		}
 
-		await promise
+		return promise
 	}
 
 	const runNextItem = async () => {
