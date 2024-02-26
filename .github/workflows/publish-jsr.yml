@@ -15,6 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Get NPM package version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+
+      - name: Replace version in deno.json
+        run: |
+          sed -i "s/\"version\": \".*\"/\"version\": \"${{ steps.package-version.outputs.version }}\"/" deno.json
+
       - name: Install Deno
         uses: denoland/setup-deno@v1
 
