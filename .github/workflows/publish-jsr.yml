@@ -23,7 +23,7 @@ jobs:
 
       - name: Replace version in deno.json
         run: |
-          sed -i "s/\"version\": \".*\"/\"version\": \"${{ steps.package-version.outputs.version }}\"/" deno.json
+          sed -i "s/\"version\": \".*\"/\"version\": \"${{ steps.package-version.outputs.current-version }}\"/" deno.json
 
       - name: Cat deno.json
         run: |
