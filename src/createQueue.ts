@@ -26,6 +26,7 @@ export const createQueue = (): {
 				const result = await task()
 				triggerResolve(result)
 			} catch (error) {
+				// @TODO: make configurable if queue should proceed when some item fails
 				triggerReject(error)
 			}
 		}
