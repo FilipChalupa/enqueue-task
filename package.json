@@ -10,6 +10,7 @@
 		"dev": "npm start",
 		"build": "rollup --configPlugin typescript -c",
 		"prepare": "npm run build",
+		"test": "node test/run.js",
 		"lint": "eslint src"
 	},
 	"repository": {
