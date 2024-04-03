@@ -11,23 +11,14 @@ export const createQueue = (): {
 	const enqueueTask = <ReturnValue>(
 		task: Task<ReturnValue>,
 	): Promise<ReturnValue> => {
-		let triggerResolve: (returnValue: ReturnValue) => void = () => {
-			// Placeholder
-		}
-		let triggerReject: (reason?: unknown) => void = () => {
-			// Placeholder
-		}
-		const promise = new Promise<ReturnValue>((resolve, reject) => {
-			triggerResolve = resolve
-			triggerReject = reject
-		})
+		const { promise, resolve, reject } = (Promise<ReturnValue>).withResolvers()
 		const wrappedTask = async () => {
 			try {
 				const result = await task()
-				triggerResolve(result)
+				resolve(result)
 			} catch (error) {
 				// @TODO: make configurable if queue should proceed when some item fails
-				triggerReject(error)
+				reject(error)
 			}
 		}
 		items.push({ task: wrappedTask })
