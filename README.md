@@ -86,3 +86,13 @@ getQueueGroup('pears').enqueueTask(task3)
 import { createGetQueueGroup } from 'enqueue-task'
 const myGetQueueGroup = createGetQueueGroup()
 ```
+
+### Development
+
+See it in action:
+
+```bash
+npm ci
+npm run build
+npm test
+```
