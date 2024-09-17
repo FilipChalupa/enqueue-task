@@ -1,4 +1,6 @@
-import { DismissError } from './DismissError'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: Deno requires extension hack
+import { DismissError } from './DismissError.ts'
 export type Task<ReturnValue> = () => Promise<ReturnValue>
 
 // @TODO: add option to dismiss specific task
