@@ -10,3 +10,6 @@ export * from './getQueueGroup.ts'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: Deno requires extension hack
 export * from './queue.ts'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: Deno requires extension hack
+export * from './DismissError.ts'

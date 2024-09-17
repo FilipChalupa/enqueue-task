@@ -87,6 +87,14 @@ import { createGetQueueGroup } from 'enqueue-task'
 const myGetQueueGroup = createGetQueueGroup()
 ```
 
+### Dismiss pending tasks
+
+All dismissed tasks will throw an instance of `DismissError`.
+
+```typescript
+queue.dismissPendingTasks()
+```
+
 ### Development
 
 See it in action:
