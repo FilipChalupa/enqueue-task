@@ -2,5 +2,14 @@
 	"name": "@onset/enqueue-task",
 	"version": "0.0.0",
 	"license": "ISC",
-	"exports": "./src/index.ts"
+	"exports": "./src/index.ts",
+	"exclude": [
+		".eslintrc.json",
+		".github",
+		".prettierrc",
+		"package-lock.json",
+		"package.json",
+		"rollup.config.ts",
+		"test"
+	]
 }
