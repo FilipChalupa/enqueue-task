@@ -27,4 +27,4 @@ jobs:
         uses: denoland/setup-deno@v1
 
       - name: Publish package
-        run: deno publish
+        run: deno publish --allow-dirty # Allow dirty to handle deno.json version property changed by CI
