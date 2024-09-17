@@ -4,6 +4,8 @@ on:
     tags:
       - '**'
 
+# @TODO: Depend on check.yml to ensure that the package is valid
+
 jobs:
   publish:
     runs-on: ubuntu-latest
