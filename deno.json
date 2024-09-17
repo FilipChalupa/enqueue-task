@@ -1,5 +1,6 @@
 {
 	"name": "@onset/enqueue-task",
 	"version": "0.0.0",
+	"license": "ISC",
 	"exports": "./src/index.ts"
 }
