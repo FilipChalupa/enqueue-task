@@ -6,7 +6,7 @@ export const createQueue = (): {
 	type Item<ReturnValue> = {
 		task: Task<ReturnValue>
 	}
-	// @TODO: add discardPendingTasks function
+	let isRunningTask = false
 	const items: Item<unknown>[] = []
 	const enqueueTask = <ReturnValue>(
 		task: Task<ReturnValue>,
@@ -22,6 +22,7 @@ export const createQueue = (): {
 			triggerReject = reject
 		})
 		const wrappedTask = async () => {
+			isRunningTask = true
 			try {
 				const result = await task()
 				triggerResolve(result)
@@ -29,10 +30,11 @@ export const createQueue = (): {
 				// @TODO: make configurable if queue should proceed when some item fails
 				triggerReject(error)
 			}
+			isRunningTask = false
 		}
 		items.push({ task: wrappedTask })
 
-		if (items.length === 1) {
+		if (items.length === 1 && !isRunningTask) {
 			runNextItem()
 		}
 
@@ -40,7 +42,7 @@ export const createQueue = (): {
 	}
 
 	const runNextItem = async () => {
-		const item = items.at(0)
+		const item = items.shift()
 		if (!item) {
 			return
 		}
@@ -49,7 +51,6 @@ export const createQueue = (): {
 		} catch (error) {
 			console.error(error)
 		}
-		items.shift()
 		runNextItem()
 	}
 
