@@ -27,7 +27,17 @@ const task3 = async () => {
 	await delay(400)
 	log('Task 3')
 }
+const task4 = async () => {
+	await delay(200)
+	log('Task 4')
+}
+const task5 = async () => {
+	await delay(100)
+	log('Task 5')
+}
 
 queue.enqueueTask(task1)
 queue.enqueueTask(task2)
 queue.enqueueTask(task3)
+queue.enqueueTask(task4)
+queue.enqueueTask(task5)
