@@ -95,6 +95,17 @@ All dismissed tasks will throw an instance of `DismissError`.
 queue.dismissPendingTasks()
 ```
 
+#### Tip: ignore dismiss errors
+
+```typescript
+queue.enqueueTask(task1).catch((error) => {
+	if (error instanceof DismissError) {
+		return
+	}
+	throw error
+})
+```
+
 ### Development
 
 See it in action:
